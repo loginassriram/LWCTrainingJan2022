@@ -1,0 +1,23 @@
+<template>
+    <div class="bgcolor">
+        <div style="text-align: center;"><b>Copy Address Scenarios </b></div>
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col slds-float_left">
+                <h1>Permanent Address</h1>
+                <h3>Enter permanent address as govt Id Proof</h3>
+                <lightning-input type="text" label="Address Line 1" name="input1"></lightning-input>
+                <lightning-input type="text" label="Address Line 2" name="input2"></lightning-input>
+                <lightning-input type="text" label="Landmark" name="input3"></lightning-input>
+                <lightning-input type="text" label="Zip Code" name="input4"></lightning-input>
+            </div>
+            <div class="slds-col slds-float_left">
+                <h1>Current Address</h1>
+                <h3><lightning-input type="checkbox" label="Same as permanent address" name="checkbox" onclick={handleFieldChange}></lightning-input></h3>
+                <lightning-input type="text" label="Address Line 1" name="rinput1" value={rad1}></lightning-input>
+                <lightning-input type="text" label="Address Line 2" name="rinput2" value={rad2}></lightning-input>
+                <lightning-input type="text" label="Landmark" name="rinput3" value={rad3}></lightning-input>
+                <lightning-input type="text" label="Zip Code" name="rinput4" value={rad4}></lightning-input>
+            </div>
+        </div>
+    </div>
+</template>
