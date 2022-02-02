@@ -1,0 +1,41 @@
+<template>
+    <div class="slds-grid slds-gutters" style="padding: 1rem;">
+        <div class="slds-col" style="width:49%">
+            <lightning-card title="For:EachDemo" icon-name="standard:account">
+                <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_fixed-layout slds-table_striped">
+                    <thead>
+                        <tr>
+                        <th style="width:15%">Index</th>
+                        <th style="width:30%">Name</th>
+                        <th style="width:55%">Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={employeeData} for:item="employee">
+                            <tr key={employee.Index}>
+                                <td>{employee.Id}</td>
+                                <td>{employee.Name}</td>
+                                <td>{employee.email}</td>
+                            </tr>
+                    </template>
+                    </tbody>
+                </table>
+                
+            </lightning-card>
+        </div>
+        <div class="slds-col">
+            <lightning-card title="Iterator Demo" icon-name="standard:account">
+                <ul class="slds-m-around_medium">
+                    <template iterator:it={employeeData}>
+                        <li key={it.value.Id}>
+                            <div if:true={it.first} class="list-first"> Corleone Family Details<br/><br/></div>
+                            {it.value.Name} -  {it.value.email}
+                            <br/>
+                            <div if:true={it.last} class="list-last"></div>
+                        </li>
+                    </template>
+                </ul>
+            </lightning-card>
+        </div>
+    </div>
+</template>
